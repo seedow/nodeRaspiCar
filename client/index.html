@@ -1,0 +1,7 @@
+ <html>
+ <script src='http://raspberrypi:8004/socket.io/socket.io.js'></script>
+ <script>
+	  var socket = io.connect('http://raspberrypi:8004');
+	  socket.emit('move', {direction:'forward'});
+</script>
+</html>
