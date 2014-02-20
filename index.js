@@ -1,4 +1,4 @@
-var app = require('http').createServer(handler),
+var app = require('http').createServer(),
     io = require('socket.io').listen(app, {
         log: false
     })
@@ -7,12 +7,11 @@ var app = require('http').createServer(handler),
 
 app.listen(PORT);
 
-function handler(req, res) {
-    console.log('connected');
-}
 
 io.sockets.on('connection', function(socket) {
-    socket.on('move', function(command) {
-        util.log("The car will move " + command.direction)
+    socket.on('action', function(command) {
+        //the action executed by the car when the move commmand is received.
+        util.log(command.direction);
+
     })
 })
