@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/seedow/nodeRaspiCar",
   "dependencies": {
-    "socket.io": "~0.9.16"
+    "socket.io": "~0.9.16",
+    "rpi-gpio": "0.0.4"
   }
 }
