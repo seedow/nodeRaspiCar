@@ -1,23 +1,27 @@
 <html>
-	<script src='http://raspberrypi:8004/socket.io/socket.io.js'></script>
-	<script src='http://code.jquery.com/jquery-2.1.0.min.js'></script>
-	<script src='./js/main.js'></script>
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	
+<script src='http://raspberrypi:8004/socket.io/socket.io.js'></script>
+<script src='http://code.jquery.com/jquery-2.1.0.min.js'></script>
+<script src='./js/main.js'></script>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 
-	<div class="row">
-		<div id="stream" class="col-md-2 col-md-offset-5">
-			<img src='http://raspberrypi:8090/?action=stream' width="320" height="240">
-		</div>
-		<div id="controls" class="col-md-5 col-md-offset-6">
-			<button type="button" class="btn btn-primary" id="forward">
-				<span class="glyphicon glyphicon-chevron-up"></span>
-			</button>
-			<button type="button" class="btn btn-primary" id="backward">
-				<span class="glyphicon glyphicon-chevron-down"></span>
-			</button>
-			
-		</div>
-	</div>
+
+<div class="row">
+    <div id="stream" class="col-md-2 col-md-offset-5">
+        <img src='http://raspberrypi:8090/?action=stream' width="320" height="240">
+    </div>
+    <div id="controls" class="col-md-5 col-md-offset-6">
+        <button type="button" class="btn btn-primary" id="forward">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+        <button type="button" class="btn btn-primary" id="backward">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+    </div>
+</div>
+<div id="log">
+    <div class="legend">RECEIVED COMMMANDS</div>
+    <div class="commands"></div>
+</div>
+
 </html>
