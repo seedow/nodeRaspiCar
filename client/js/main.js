@@ -9,10 +9,13 @@
 	      STOP = 'stop';
 
 
+	  socket.on('actionResponse', function(response) {
+	      $('#log').append("<div>" + response.direction + "</div>")
+	  })
 	   //TODO: unify handlers for actions
 
 	   //click handlers for buttons
-	  $('document').ready(function() {
+	   $('document').ready(function() {
 
 	      $('#controls button').on('mousedown press', function() {
 	          var keypress = $.Event('keypress');
@@ -36,7 +39,6 @@
 	          $('html').trigger(keyup);
 	      })
 	  })
-
 
 	   //handler for keypress on the html page
 	   $('html').keypress(function(e) {
