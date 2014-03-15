@@ -6,10 +6,9 @@ var app = require('http').createServer(),
 util = require('util');
 var PORT = 8004;
 var pins = [7, 11, 13];
-
+var _socket;
 //start the server
 app.listen(PORT);
-
 gpioSetup(pins);
 
 
@@ -20,6 +19,7 @@ var MOVE_FORWARD = 'forward',
 
 
 io.sockets.on('connection', function(socket) {
+    _socket = socket;
     socket.on('action', function(command) {
         //the action executed by the car when the move commmand is received.
         util.log("Received " + command.direction);
@@ -43,6 +43,9 @@ var takeAction = function(direction) {
             gpio.write(7, 0);
             break;
     }
+    _socket.emit('actionResponse', {
+        direction: direction
+    })
 }
 
 //set all the pins for output
